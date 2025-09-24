@@ -8,7 +8,7 @@ image:
   repository: punit19/go-web-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "17981170919"
+  tag: "17982693665"
 
 ingress:
   enabled: false

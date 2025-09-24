@@ -5,11 +5,13 @@ metadata:
   name: go-web-app
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"   # backward compatibility
 spec:
+  ingressClassName: nginx                  # explicitly tell K8s to use nginx ingress controller
   rules:
-  - host: go-web-app.local
+  - host: go-web-app.local                 # replace with your domain or ELB CNAME later
     http:
-      paths: 
+      paths:
       - path: /
         pathType: Prefix
         backend:
@@ -17,4 +19,5 @@ spec:
             name: go-web-app
             port:
               number: 80
+
 
